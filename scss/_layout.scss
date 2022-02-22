@@ -9,18 +9,18 @@ body {
 
 main {
     max-width: 80%;
-    display: flex;
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        flex-basis: 50%;
+
         background-color: $card-background;
         color: $white;
-        padding: 3rem;
         font-family: $ff-inter;
+        padding: 3rem;
 
         .content--header {
             h1 {
@@ -32,7 +32,8 @@ main {
 
         .content--text {
             p {
-                color: $main-p;
+                font-size: 0.975rem;
+                color: $stats-h;
             }
         }
 
@@ -42,20 +43,23 @@ main {
             align-items: center;
             justify-content: space-between;
             text-transform: uppercase;
+            font-family: $ff-lexend-deca;
             
             div {
-                p:first-child {
-                    color: $stats-h;
+                h2 {
+                    color: $white;
                 }
 
-                p:last-child {
-                    color: $main-p;
+                p {
+                    font-size: 0.975rem;
+                    color: $stats-h;
                 }
             }
         }
     }
 
     @media (max-width: 375px) {
+            flex-direction: column;
         .image {
             img {
                 &.image--mobile {
@@ -70,7 +74,6 @@ main {
 
     @media (min-width: 376px) {
         .image {
-            flex-basis: 50%;
             img {
                 &.image--mobile {
                     display: none;
