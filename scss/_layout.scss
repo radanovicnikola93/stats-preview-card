@@ -1,5 +1,5 @@
 body {
-    // background-color: $main-bg;
+    background-color: $main-bg;
     height: 100vh;
     // flex
     display: flex;
@@ -8,8 +8,51 @@ body {
 }
 
 main {
-    .content {
+    max-width: 80%;
+    display: flex;
 
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex-basis: 50%;
+        background-color: $card-background;
+        color: $white;
+        padding: 3rem;
+        font-family: $ff-inter;
+
+        .content--header {
+            h1 {
+                span {
+                    color: $accent;
+                }
+            }
+        }
+
+        .content--text {
+            p {
+                color: $main-p;
+            }
+        }
+
+        .content--stats {
+            min-width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-transform: uppercase;
+            
+            div {
+                p:first-child {
+                    color: $stats-h;
+                }
+
+                p:last-child {
+                    color: $main-p;
+                }
+            }
+        }
     }
 
     @media (max-width: 375px) {
@@ -27,6 +70,7 @@ main {
 
     @media (min-width: 376px) {
         .image {
+            flex-basis: 50%;
             img {
                 &.image--mobile {
                     display: none;
