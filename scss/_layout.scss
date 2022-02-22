@@ -8,7 +8,6 @@ body {
 }
 
 main {
-  border-radius: 25px !important;
   max-width: 1440px;
   width: 70%;
   display: grid;
@@ -16,6 +15,8 @@ main {
   grid-template-areas: "content img";
 
   .content {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     grid-area: content;
     display: flex;
     flex-direction: column;
@@ -64,11 +65,15 @@ main {
   }
 
   .image {
+      border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     grid-area: img;
     display: flex;
     justify-content: center;
     align-items: center;
     img {
+              border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
         max-width: 100%;
         min-width: 100%;
       &.image--mobile {
