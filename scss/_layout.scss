@@ -8,6 +8,7 @@ body {
 }
 
 main {
+  border-radius: 15px;
   max-width: 1440px;
   width: 70%;
   display: grid;
@@ -15,8 +16,6 @@ main {
   grid-template-areas: "content img";
 
   .content {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
     grid-area: content;
     display: flex;
     flex-direction: column;
@@ -65,17 +64,24 @@ main {
   }
 
   .image {
-      border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
     grid-area: img;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    &::after {
+      content: " ";
+      background-color: $accent;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      position: absolute;
+      z-index: 999;
+    }
+
     img {
-              border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-        max-width: 100%;
-        min-width: 100%;
+      max-width: 100%;
+      min-width: 100%;
       &.image--mobile {
         display: none;
       }
@@ -88,9 +94,9 @@ main {
 }
 
 @media (max-width: 375px) {
-    body {
-        height: 100%;
-    }
+  body {
+    height: 100%;
+  }
   main {
     margin: 2rem 0;
     grid-template-areas:
@@ -99,11 +105,11 @@ main {
   }
 
   .content {
-      text-align: center;
+    text-align: center;
   }
 
   .content--stats {
-      width: 100%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;

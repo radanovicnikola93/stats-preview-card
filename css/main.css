@@ -16,14 +16,13 @@ body {
   align-items: center; }
 
 main {
+  border-radius: 15px;
   max-width: 1440px;
   width: 70%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "content img"; }
   main .content {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
     grid-area: content;
     display: flex;
     flex-direction: column;
@@ -51,15 +50,20 @@ main {
         font-size: 0.975rem;
         color: rgba(255, 255, 255, 0.6); }
   main .image {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
     grid-area: img;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
+    main .image::after {
+      content: " ";
+      background-color: #aa5cdb;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      position: absolute;
+      z-index: 999; }
     main .image img {
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
       max-width: 100%;
       min-width: 100%; }
       main .image img.image--mobile {
