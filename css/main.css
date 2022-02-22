@@ -7,3 +7,21 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media (max-width: 375px) {
+  main .image img.image--mobile {
+    display: block; }
+  main .image img.image--desktop {
+    display: none; } }
+
+@media (min-width: 376px) {
+  main .image img.image--mobile {
+    display: none; }
+  main .image img.image--desktop {
+    display: block; } }

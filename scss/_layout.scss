@@ -1,0 +1,40 @@
+body {
+    // background-color: $main-bg;
+    height: 100vh;
+    // flex
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    .content {
+
+    }
+
+    @media (max-width: 375px) {
+        .image {
+            img {
+                &.image--mobile {
+                display: block;
+                }
+                &.image--desktop {
+                display: none;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 376px) {
+        .image {
+            img {
+                &.image--mobile {
+                    display: none;
+                }
+                &.image--desktop {
+                    display: block;
+                }
+            }
+        }
+    }
+}
